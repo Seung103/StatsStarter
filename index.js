@@ -46,6 +46,13 @@ function getLength(numbers) {
  * @returns {number} the sum of the numbers
  */
 function getSum(numbers) {
+  let sum=0;
+//this was to find all the numbers and adding them altogether to find the sum of the parameter
+//i did learn another way of doing this by using math.Integer
+  for (const n of numbers) {
+    sum += n;
+  }
+
   return sum;
   // TODO
 }
@@ -55,6 +62,10 @@ function getSum(numbers) {
  * @returns {number} the mean of the numbers
  */
 function getMean(numbers) {
+  const sum = getSum(numbers);
+  return sum/numbers.length
+// getting average is sum of parameter divided by the total number of integers
+// const sum=getSum(numbers) was used to get the total and numbers.length was to find how many integers were included in the parameter
   // TODO
 }
 
@@ -63,6 +74,14 @@ function getMean(numbers) {
  * @returns {number} the smallest of the numbers
  */
 function getMin(numbers) {
+  //by using infinity the checking sample size became infinite
+  let min = Infinity;
+  for (const n of numbers) {
+    if (n < min) {
+      min = n;
+    }
+  }
+  return min;
   // TODO
 }
 
@@ -71,6 +90,13 @@ function getMin(numbers) {
  * @returns {number} the largest of the numbers
  */
 function getMax(numbers) {
+  let max = Infinity;
+  for (const n of numbers) {
+    if (n < max) {
+      min = n;
+    }
+  }
+  return max;
   // TODO
 }
 
@@ -79,6 +105,8 @@ function getMax(numbers) {
  * @returns {number} the range of the numbers (max - min)
  */
 function getRange(numbers) {
+  //not sure about this one
+  return getMax(numbers) - getMin(numbers);
   // TODO
 }
 
@@ -87,13 +115,27 @@ function getRange(numbers) {
  * @returns {number[]} the even numbers in the array
  */
 function getEvens(numbers) {
-  // TODO
+  const output = [];
+  for (const n of numbers) {
+    if (n % 2 === 0) {
+      output.push(n);
+    }
+  }
+  return output;
 }
+  // TODO
 
 /**
  * @param {number[]} numbers an array of integers
  * @returns {number[]} the odd numbers in the array
  */
 function getOdds(numbers) {
+  const output = [];
+  for (const n of numbers) {
+    if (n % 2 === 1) {
+      output.push(n);
+    }
+  }
+  return output;
   // TODO
 }
